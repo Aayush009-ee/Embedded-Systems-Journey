@@ -1,0 +1,68 @@
+# Toggle Active Buzzer with Push Button
+
+## Objective
+
+To control an active buzzer using a push button in toggle mode. Each press of the button changes the buzzer's state:
+
+* First press → Buzzer ON
+* Second press → Buzzer OFF
+* Third press → Buzzer ON
+* And so on.
+
+## Components Required
+
+* Arduino Uno
+* Active Buzzer
+* Push Button
+* 10 kΩ Resistor
+* Breadboard
+* Jumper Wires
+
+## Circuit Connections
+
+### Push Button
+
+* One terminal → 5V
+* Opposite terminal → Digital Pin 12
+* 10 kΩ resistor between Digital Pin 12 and GND (Pull-down resistor)
+
+### Active Buzzer
+
+* Positive (+) terminal → Digital Pin 13
+* Negative (−) terminal → GND
+
+## Working Principle
+
+The Arduino continuously monitors the push button using `digitalRead()`. It compares the current button state with the previous button state to detect a **new button press**. When a new press is detected, the buzzer state is toggled using the logical NOT (`!`) operator. The buzzer then remains in its new state until the next valid button press.
+
+A short delay of 50 ms is used for basic software debouncing to reduce false triggering caused by mechanical switch bounce.
+
+## Concepts Learned
+
+* Edge detection (detecting a button press event)
+* State toggling using Boolean variables
+* Tracking previous and current button states
+* Software debouncing
+* `digitalRead()`
+* `digitalWrite()`
+* Boolean logic and the `!` operator
+
+## Challenges Faced
+
+* Initially used the `!=` operator instead of `= !` for toggling the buzzer state.
+* Learned the difference between comparison (`!=`) and assignment (`=`).
+* Initially turned the buzzer OFF in the `else` block, preventing the toggle from working correctly.
+* Understood that the buzzer must retain its current state until another button press is detected.
+
+## Applications
+
+* Power switches
+* Home automation controls
+* Device ON/OFF buttons
+* Alarm system activation
+* User interface controls
+* Robotics control panels
+
+## Outcome
+
+Successfully built a push-button-controlled toggle buzzer. The buzzer changes between ON and OFF with each button press while maintaining its current state until the next valid press.
