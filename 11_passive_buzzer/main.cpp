@@ -11,5 +11,18 @@ void setup() {
 }
 
 void loop() {
-    
+    tone(buzzer, 1047);  
+    delay(5000); 
+    tone(buzzer, 1319);   
+    delay(5000);   
+    tone(buzzer, 1568);  
+    delay(5000);   
+    tone(buzzer, 1319);   
+    delay(5000);   
+    tone(buzzer, 1047);   
+    delay(5000);   
+    tone(buzzer, 1568);   
+    delay(5000);   
+    tone(buzzer, 2093);   
+    delay(5000);     
 }
